@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>병합</title>
+    <style>
+      table {
+        width: 600px;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+      }
+      th,
+      td {
+        border: 1px solid saddlebrown;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    표 태그
+    1) table, tr, td, th
+    2) 컬럼: td, th
+    3) th는 가운데 정렬 + 굵은 글씨체
+
+    병합
+    1) 행 병합: colspan
+    2) 열 병합: rowspan
+    -->
+    <table>
+      <tr>
+        <td colspan="2">내용1</td>
+      </tr>
+      <tr>
+        <td>내용3</td>
+        <td>내용4</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th>제목</th>
+        <td rowspan="2">내용1</td>
+        <td>내용2</td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td>내용3</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th>제목1</th>
+        <th>제목2</th>
+      </tr>
+      <tr>
+        <td colspan="2">내용1</td>
+      </tr>
+      <tr>
+        <td>내용3</td>
+        <td>내용4</td>
+      </tr>
+    </table>
+  </body>
+</html>
