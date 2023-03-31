@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>global</title>
+  </head>
+  <body>
+    <!-- 
+    특정 태그에만 사용해야 하는 속성: <a href>
+
+    전역속성: 모든 태그에 사용할 수 있는 속성 => css, script에서 중요하게 사용한다.
+    1. class: 값은 중복될 수 있다.
+    2. id: 한 페이지 내에서 중복될 수 없다.
+    3. style: 디자인을 인라인 방식으로 부여할 때 사용한다.
+    4. data-*: 사용자 정의 데이터 속성을 지정할 때 사용한다. *의 의미는 아무 값이나 써도 된다는 뜻이다.
+    5. name: 필드 이름 지정 
+    -->
+    <h1
+      class="header"
+      id="header"
+      name="header"
+      data-head="title"
+      style="font-size: 50px"
+    ></h1>
+    <h2 class="header" id="header2">헤더2</h2>
+  </body>
+</html>

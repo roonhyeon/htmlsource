@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form1</title>
+  </head>
+  <body>
+    <!-- 폼 태그 
+    1. form: 사용자가 뭔가를 입력하는 형태로 만들어진 모든 것(검색창, 로그인창 등)
+    2. <form method="보내는 방법">: 폼 안의 데이터들을 ex.주소줄에 내가 입력한 로그인 아이디와 비번을 감싸서 안보이게 보낼 것인가?(post), 
+                                                     ex.주소줄에 내가 검색한 글자를 보여주면서 보낼 것인가?(get)
+                                                     => 이때 만약 method의 속성을 적어주지 않으면 기본 get 방식으로 전송된다.
+    3. action: 폼 안의 데이터들을 전송할 주소(특정 페이지), 백엔드 프로그램이 들어올 부분
+    4. input type="text": 검색칸 생성, text 형태 데이터 입력 => name=""을 따로 지정해주지 않으면 주소줄에 내가 검색칸에서 입력한 것이 안보인다.
+    5. label: 검색칸별 이름
+    -->
+    <form method="get" action="link2.html">
+      <p>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" />
+      </p>
+      <p>
+        <!-- 
+          label로 단락을 감싸주면 전화번호 글자만 클릭해도 검색칸이 클릭된다. 
+          아니면 label for에 값을 주고 id를 추가해주면 된다.
+        -->
+        <label
+          >전화번호
+          <input type="text" name="tel" />
+        </label>
+      </p>
+      <p>
+        <label for="age">나이</label>
+        <input type="text" name="age" id="age" />
+      </p>
+      <p>
+        <!-- submit: 현재 폼을 action이 지정한 곳으로 전송하는 역할을 한다. -->
+        <input type="submit" value="전송" />
+      </p>
+    </form>
+    <!-- http://195.168.9.23:5500/htmlsource/link2.html?name=홍길동 => get 방식으로 넘어옴 -->
+    <!-- http://195.168.9.23:5500/htmlsource/link2.html?name=홍길동&age=14 -->
+  </body>
+</html>

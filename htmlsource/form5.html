@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form5</title>
+  </head>
+  <body>
+    <!-- 
+      select, option: 드롭다운 목록 작성
+      1. select
+         1) size: 화면에 보여질 드롭다운 메뉴의 항목 개수 지정
+         2) mutiple: ctrl을 누른 상태로 여러 항목을 선택할 수 있다.
+      2. option
+         1) selected: 화면에 표시될 때 기본값으로 무조건 이미 선택이 되어있다.
+    -->
+    <form action="form4.html" method="get">
+      <label for="">과일 선택</label>
+      <select name="fruit" id="" size="5" multiple>
+        <option value="사과">사과</option>
+        <option value="수박" selected>수박</option>
+        <option value="바나나">바나나</option>
+        <option value="포도">포도</option>
+        <option value="딸기">딸기</option>
+      </select>
+      <fieldset>
+        <legend>수강신청</legend>
+        <label for="">학과</label>
+        <select name="" id="">
+          <optgroup label="공과대학">
+            <option value="건축공학과">건축공학과</option>
+            <option value="기계공학과">기계공학과</option>
+            <option value="산업공학과">산업공학과</option>
+            <option value="컴퓨터공학과">컴퓨터공학과</option>
+          </optgroup>
+          <optgroup label="인문대학">
+            <option value="사학과">사학과</option>
+            <option value="어문학과">어문학과</option>
+            <option value="철학과">철학과</option>
+          </optgroup>
+        </select>
+      </fieldset>
+      <div>
+        <input type="submit" value="전송" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>link2</title>
+    <style>
+      h2 {
+        padding-bottom: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      #: 특정 id 값을 사용하겠다. 클릭하면 제목1이나 제목2 중 원하는 곳이 위치한 곳으로 바로 이동한다.
+    -->
+    <ul>
+      <li>
+        <a href="#title1">제목1</a>
+        <!--link2.html#title1-->
+      </li>
+      <li>
+        <a href="#title2">제목2</a>
+        <!--link2.html#title2-->
+      </li>
+    </ul>
+    <p>
+      <!-- 브라우저가 해석할 수 있는 파일의 형태면 창으로 띄어주고, 아니면 다운로드를 실시한다. -->
+      <a href="exam.txt" download>exam</a>
+    </p>
+    <p>
+      <a href="HTML.pptx">PPT</a>
+    </p>
+    <p>
+      <a href="mailto:hong@google.com">메일 보내기</a>
+    </p>
+    <h2 id="title1">제목1</h2>
+    <h2 id="title2">제목2</h2>
+  </body>
+</html>

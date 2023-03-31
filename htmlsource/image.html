@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image</title>
+  </head>
+  <body>
+    <!-- 
+    웹에서 사용할 수 있는 이미지 형식
+    1. gif: 움직이는 이미지, 색상 256개 사용 제한
+    2. jpg: 사진 저장, gif 보다는 다양한 색상, 명암 표현 가능 
+    3. png: 최근 가장 많이 사용
+    -->
+
+    <!-- 로컬에서 이미지를 가지고 있는 경우 -->
+    <!-- src: 이미지 경로, alt: 이미지가 안 보일 때 대체할 텍스트 -->
+    <!-- width, height로 이미지의 크기 조정(단위는 픽셀)이 가능하지만 보통 css로 처리한다. -->
+
+    <!-- 이미지 경로: 상대경로, 절대경로 
+      1. 상대경로: . or ../img/특정파일 => 주로 사용한다.
+      2. 절대경로: c:/windows/img/특정파일
+    -->
+    <img src="img/buildings.jpg" alt="건물" />
+
+    <!-- 웹 상의 이미지를 가지고 올 경우: 이미지 주소 복사 -->
+    <img
+      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMjhfMjM3%2FMDAxNjc3NTc3MTA4NjQ0.rLAsWcd0x4dBP3zmdk1OINgIKNxkIvyXd18-ymw1-nwg.30phUtJiXv7P9a5sj8_8mn_rG6RGst2w3d026VN6flMg.JPEG.zscczx%2F%25B0%25ED%25BE%25E7%25C0%25CC%25BF%25EF%25C0%25BD%25BC%25D2%25B8%25AE%25C1%25BE%25B7%25F9.jpg&type=a340"
+      alt="cat"
+    />
+  </body>
+</html>
