@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>priority</title>
+    <style>
+      .ecosystem {
+        color: crimson;
+      }
+      .tiger {
+        color: blue;
+      }
+      .area p {
+        color: lightseagreen;
+      }
+      p {
+        color: olivedrab;
+      }
+      #text1 {
+        color: violet;
+      }
+      #text2 {
+        color: orange !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 우선순위: 스타일 우선순위
+      스타일 상속: 자식 요소에서 별도로 스타일을 지정하지 않는 경우 부모의 스타일 속성이 전달된다. 글자를 다루는 속성들이 주로 전달된다.
+      1. !important: 1000점
+      2. 인라인 선언: 500점
+      3. 아이디 선택자: 100점
+      4. 클래스 선택자(가상 클래스 포함): 10점
+      5. 태그 선택자(가상 요소 before, after 포함): 1점
+      6. 전체 선택자
+      7. 상속
+
+      <환산의 예시>
+      .list li.item{}: 10+1+10=21pt
+      .list li:hover{}: 21pt
+      .box::after{}: 10+1=11pt
+      #submit span{}: 100+1=101pt
+      :not(.box){}: not은 점수 없음+10=10pt
+    -->
+    <div class="ecosystem">
+      <div class="animal">
+        동물
+        <div class="tiger">호랑이</div>
+        <div class="lion">사자</div>
+        <div class="elephant">코끼리</div>
+      </div>
+      <div class="plant">식물</div>
+    </div>
+    <div class="area">
+      <p id="text1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id
+        veritatis harum optio in repellat laborum veniam facere inventore minima
+        enim voluptatem possimus, perferendis eius aut. Vero sed amet laborum.
+      </p>
+      <!-- 글자색 인라인 선언 -->
+      <p id="text2" style="color: darkslateblue">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id
+        veritatis harum optio in repellat laborum veniam facere inventore minima
+        enim voluptatem possimus, perferendis eius aut. Vero sed amet laborum.
+      </p>
+    </div>
+  </body>
+</html>

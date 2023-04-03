@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자8</title>
+    <style>
+      /* #title {
+        text-decoration: underline;
+      }
+      (div) nav ~ h2 {
+        text-decoration: underline;
+      } */
+
+      /* 겹치는 부분 그룹화 */
+      #title,
+      nav ~ h2 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    스타일 지정을 위해 앞 쪽에 쓰는 선택자는 다양하게 존재한다.
+    1. 태그 선택자
+    2. 전체 선택자(*)
+    3. 클래스 선택자
+    4. 아이디 선택자: 한 페이지 내에서 중복 불가
+    5. 자손(하위) 선택자: 부모-자손(자식+손자)
+    6. 자식 선택자: 부모 > 자식 => div > h2 => 바로 밑에 있는 자식에만 스타일이 적용된다.
+    7. 인접 형제 선택자: +, ~
+    8. 그룹화
+    -->
+    <div>
+      <h1 id="title">css 기본 문법</h1>
+      <h2>인접 형제 1</h2>
+      <h2>인접 형제 2</h2>
+      <nav>
+        <h2>제목</h2>
+      </nav>
+      <h2>타이틀1</h2>
+      <h2>타이틀2</h2>
+    </div>
+  </body>
+</html>
