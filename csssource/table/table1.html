@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table1</title>
+    <style>
+      /* table {
+        border: 2px solid black;
+        border-collapse: collapse;  테두리 통합(이거다 이거)
+        width: 300px;
+      } */
+      /* table td,
+      th {
+        border: 1px dashed black;
+        text-align: center;
+        vertical-align: top;
+        padding: 10px;  안쪽 여백
+      } */
+      .table1,
+      td {
+        border: 1px solid #ccc;
+      }
+      td {
+        height: 100px;
+        padding: 20px;
+      }
+      .val1 {
+        vertical-align: top;
+      }
+      .val2 {
+        vertical-align: bottom;
+      }
+      .val3 {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+
+    <table class="table1">
+      <caption>
+        vertical-alignment
+      </caption>
+      <tr>
+        <td class="val1">alignment</td>
+        <td class="val2">alignment</td>
+        <td class="val3">alignment</td>
+      </tr>
+    </table>
+  </body>
+</html>

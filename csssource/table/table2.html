@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table2</title>
+    <style>
+      /* 표와 셀에 테두리(1px solid black) 그린 후 한줄로 합쳐서 표현,
+      각 셀에는 padding: 10px 적용, 배경색 지정(#eee)을 위한 클래스 선택자(.heading)를 정의한 후 첫번째 행과 첫번째 열에 적용 */
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        /* top(상단) 기본, bottom */
+        caption-side: bottom;
+      }
+      .heading {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        2022년 국민 독서실태
+      </caption>
+      <tr class="heading">
+        <th>구분</th>
+        <th>성인</th>
+        <th>학생</th>
+      </tr>
+      <tr>
+        <th class="heading">독서율</th>
+        <td>65.3%</td>
+        <td>94.9%</td>
+      </tr>
+      <tr>
+        <th class="heading">연평균 독서량</th>
+        <td>9.1권</td>
+        <td>29.8권</td>
+      </tr>
+      <tr>
+        <th class="heading">공공도서관 이용률</th>
+        <td>28.2%</td>
+        <td>64.9%</td>
+      </tr>
+    </table>
+  </body>
+</html>

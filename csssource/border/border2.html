@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>border2</title>
+    <style>
+      /* 두께: 5px, 실선, red */
+      .boxmodel {
+        border: 5px solid red;
+        border-radius: 20px 5px 0px;
+      }
+      .circle {
+        width: 300px;
+        height: 300px;
+        font-size: 5em;
+        background-color: red;
+        border: 2px solid black;
+        border-radius: 50%;
+        color: aliceblue;
+        text-align: center;
+        /* 글씨를 정중앙에 오게하고 싶으면 height와 같은 크기로 부여 */
+        line-height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxmodel">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa optio, nemo
+      incidunt tenetur vel cupiditate alias at, facilis atque asperiores
+      eligendi rem ea, enim aut fugit labore rerum ex ipsam.
+    </div>
+    <div class="circle">circle</div>
+  </body>
+</html>

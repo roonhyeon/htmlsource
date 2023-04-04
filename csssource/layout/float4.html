@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float4</title>
+    <style>
+      body {
+        background: #ddd;
+      }
+      .box {
+        background-color: white;
+        /* height: 50px; */
+        /* 부모 사이즈를 넘어가는 부분은 안보이게 처리(hidden), 스크롤하면 보이게 처리(auto), 수평&수직에 스크롤 생김(scroll), 기본값(visible)-넘친 부분을 그대로 보여줌 */
+        /* overflow: visible; */
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+      p {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- overflow: 부모 요소의 크기보다 자식 요소가 더 커서 자식 요소가 넘치는 상황 -->
+    <div class="box">
+      <!-- float를 사용하면 부모가 자식을 집 나간 자식으로 취급하므로 자식은 부모의 height을 인지하지 못한다. -->
+      <img src="left-arrow.png" alt="왼쪽 화살표" class="left" />
+      <img src="right-arrow.png" alt="오른쪽 화살표" class="right" />
+    </div>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, iure
+      error qui cum aut neque eaque perferendis voluptatem quaerat at,
+      laboriosam voluptate optio laudantium unde ex architecto modi maxime?
+      Suscipit.
+    </p>
+  </body>
+</html>
