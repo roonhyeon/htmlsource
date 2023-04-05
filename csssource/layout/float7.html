@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float7</title>
+    <style>
+      /* 전체 요소의 마진과 패딩을 0으로 지정 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* content 영역의 배경색을 skyblue로 지정 */
+      .content {
+        background-color: skyblue;
+      }
+      /* content 안 div 요소들의 테두리 지정(2px, 실선, 검정), 오른쪽 마진 10px 지정 */
+      .content div {
+        border: 2px solid black;
+        margin-right: 10px;
+        float: left;
+      }
+      /* 이미지가 기본적으로 가지고 있는 하단의 공백 제거 */
+      img {
+        vertical-align: top;
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content clearfix">
+      <div>
+        <img src="https://placehold.co/100" alt="가상이미지" class="thumb" />
+      </div>
+      <div>
+        <img src="https://placehold.co/100" alt="가상이미지" class="thumb" />
+      </div>
+      <div>
+        <img src="https://placehold.co/100" alt="가상이미지" class="thumb" />
+      </div>
+    </div>
+    <h2>float 속성</h2>
+  </body>
+</html>

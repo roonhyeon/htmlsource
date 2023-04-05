@@ -1,0 +1,26 @@
+body {
+  background: #222;
+}
+.grid {
+  width: 500px;
+  margin: 0 auto;
+  background: white;
+  /* 오른쪽에 발생하는 틈 제거 */
+  font-size: 0;
+}
+.grid-item {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  /* 하단에 발생하는 틈 제거 */
+  vertical-align: top;
+}
+.grid-item.a {
+  background: orange;
+}
+.grid-item.b {
+  background: orangered;
+}
+.grid-item.c {
+  background: red;
+}

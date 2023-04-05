@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>absolute1-실습2</title>
+    <style>
+      body {
+        padding-top: 100px;
+      }
+      .container {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background: yellow;
+        /* absolute 요소의 부모 개념으로 사용한다. */
+        position: relative;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      .a {
+        background: red;
+        left: 0;
+        top: 100px;
+      }
+      .b {
+        background: green;
+        right: 200px;
+        top: 100px;
+      }
+      .c {
+        background: blue;
+        bottom: 100px;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- position: absolute => 위치 상 부모 요소를 기준으로 배치된다. 원래 자리에 고정이 되어 스크롤을 내리면 안 보인다.
+      -부모 요소: position 값이 부여된 다른 요소, 그 다른 요소가 없다면 화면이 기준
+      -여기서는 box에 말고는 부여된 다른 요소가 없으므로 a, b, c 박스 모두 화면을 기준으로 위치됨
+      -그리고 container에 relative를 부여해주면 box가 yellow를 기준으로 배치가 된다.
+    -->
+    <div class="container">
+      <div class="box a">Box A</div>
+      <div class="box b">Box B</div>
+      <div class="box c">Box C</div>
+    </div>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero numquam
+      exercitationem iste aut, repudiandae quis earum ipsum ut sed! Aperiam
+      quidem, at eveniet quibusdam ea distinctio eum iste animi explicabo.
+    </p>
+  </body>
+</html>

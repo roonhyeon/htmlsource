@@ -13,7 +13,7 @@
         background-color: white;
         /* height: 50px; */
         /* 부모 사이즈를 넘어가는 부분은 안보이게 처리(hidden), 스크롤하면 보이게 처리(auto), 수평&수직에 스크롤 생김(scroll), 기본값(visible)-넘친 부분을 그대로 보여줌 */
-        /* overflow: visible; */
+        overflow: hidden;
       }
       .left {
         float: left;
@@ -24,14 +24,21 @@
       p {
         border: 2px solid black;
       }
+      .clearfix {
+        /* 여기서부터는 float 안 쓸 거야. clear:left(왼쪽 해제할 거야), clear:right(오른쪽 해제할 거야) */
+        clear: both;
+      }
     </style>
   </head>
   <body>
     <!-- overflow: 부모 요소의 크기보다 자식 요소가 더 커서 자식 요소가 넘치는 상황 -->
     <div class="box">
-      <!-- float를 사용하면 부모가 자식을 집 나간 자식으로 취급하므로 자식은 부모의 height을 인지하지 못한다. -->
+      <!-- float를 사용하면 부모가 자식을 집 나간 자식으로 취급하므로 자식은 부모의 height을 인지하지 못한다.
+        float 속성 해제 => clear:both;, overflow:hidden;
+      -->
       <img src="left-arrow.png" alt="왼쪽 화살표" class="left" />
       <img src="right-arrow.png" alt="오른쪽 화살표" class="right" />
+      <div class="clearfix">Awesome!</div>
     </div>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, iure

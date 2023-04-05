@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float5</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: #ffd800;
+        margin-right: 10px;
+        float: left;
+      }
+      .box1 {
+        width: 150px;
+        height: 150px;
+        background: red;
+        border: 1px solid black;
+      }
+      /* 이렇게 설정해놓으면 이 다음에 오는 것들이 원래 지정한 대로 잘 자리잡는다. */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- float가 될 부분을 clearfix로 묶기 -->
+    <div class="clearfix">
+      <div class="box">박스1</div>
+      <div class="box">박스2</div>
+      <div class="box">박스3</div>
+    </div>
+    <div class="box1">박스4</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit est
+      fugit voluptate quasi esse qui earum eaque harum, adipisci vitae in,
+      consectetur iure sequi sunt doloremque delectus dolorum aliquam sint!
+    </p>
+  </body>
+</html>

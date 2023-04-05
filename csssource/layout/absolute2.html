@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>absolute2</title>
+    <style>
+      body {
+        padding-top: 100px;
+      }
+      .container {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background: yellow;
+        position: relative;
+      }
+      .box {
+        height: 100px;
+        position: absolute;
+      }
+      .a {
+        background: red;
+        right: 100%;
+        top: 100px;
+      }
+      .b {
+        background: green;
+        left: 200px;
+        top: 100px;
+      }
+      .c {
+        background: blue;
+        left: 100%;
+        bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 박스별로 사이즈가 다를 때 위치 값 부여: 부모의 크기가 고정이라면 px을 사용해도 상관없으나, 만약 유동적이라면 %를 사용하는 것이 좋다. -->
+    <div class="container">
+      <div class="box a">Box AAAAAA</div>
+      <div class="box b">Box B</div>
+      <div class="box c">Box CCC</div>
+    </div>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero numquam
+      exercitationem iste aut, repudiandae quis earum ipsum ut sed! Aperiam
+      quidem, at eveniet quibusdam ea distinctio eum iste animi explicabo.
+    </p>
+  </body>
+</html>
