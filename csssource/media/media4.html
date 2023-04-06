@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media4</title>
+    <style>
+      /* 모든 요소의 크기는 border 포함 */
+      * {
+        box-sizing: border-box;
+      }
+      /* body => font-family: Open Sans, 배경색: #ecf0f1 */
+      body {
+        font-family: "Open Sans";
+        background-color: #ecf0f1;
+      }
+      /* wrapper => width: 100%, margin: 상하2rem/좌우 가운데, max-width: 60rem */
+      .wrapper {
+        width: 100%;
+        margin: 2rem auto;
+        /* 아무것도 지정하지 않았으면 기본 폰트 크기인 16px*60=960px */
+        max-width: 60rem;
+      }
+      .flexbg {
+        display: flex;
+      }
+      .flexbg main {
+        order: 2;
+        width: 60%;
+        padding: 1.618rem;
+      }
+      .flexbg .sidebar {
+        width: 20%;
+        color: white;
+        padding: 1.618rem;
+      }
+      .flexbg .left {
+        order: 1;
+        background: lightseagreen;
+      }
+      .flexbg .right {
+        order: 3;
+        background: lightslategray;
+      }
+
+      /* 최대 768px */
+      @media screen and (max-width: 768px) {
+        /* flex-wrap:wrap */
+        .flexbg {
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          order: 1;
+          width: 100%;
+        }
+        .flexbg .sidebar {
+          width: 50%;
+        }
+        .flexbg .left {
+          order: 2;
+        }
+      }
+
+      /* 최대 480px */
+      @media screen and (max-width: 480px) {
+        .flexbg {
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          order: 1;
+          width: 100%;
+        }
+        .flexbg .right {
+          order: 3;
+          width: 100%;
+        }
+        .flexbg .left {
+          order: 2;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flexbg">
+      <main>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
+          consequuntur unde repudiandae alias iste nemo suscipit eveniet
+          laudantium aut cupiditate harum deleniti excepturi totam assumenda,
+          ullam expedita autem, voluptate nam.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis
+          eius ipsa vero, maxime esse provident, odit id voluptatum temporibus
+          ut rerum corrupti nostrum quo itaque exercitationem perspiciatis
+          dolores, ipsam nulla?
+        </p>
+      </main>
+      <aside class="sidebar left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
+        ipsum illum dolores unde nemo alias veniam quaerat voluptate, impedit
+        nesciunt. Nesciunt cum ipsa minima suscipit rem nobis nostrum ea natus!
+      </aside>
+      <aside class="sidebar right">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
+        ratione, a modi consectetur ab ipsa, praesentium labore ea fuga impedit
+        perspiciatis nobis dolore qui reprehenderit esse laborum dignissimos
+        nesciunt minus?
+      </aside>
+    </div>
+  </body>
+</html>

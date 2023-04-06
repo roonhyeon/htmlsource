@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media2</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        height: 100px;
+        background: yellow;
+      }
+
+      /* 해상도 변화에 따라 container 요소 배경색 변경 */
+
+      @media screen and (max-width: 960px) {
+        /* 721px ~ 960px */
+        .container {
+          background: lightpink;
+        }
+      }
+
+      @media screen and (max-width: 720px) {
+        /* 541px ~ 720px */
+        .container {
+          background: lightyellow;
+        }
+      }
+
+      @media screen and (max-width: 540px) {
+        /* 0px ~ 540px */
+        .container {
+          background: lightblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
