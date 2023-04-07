@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var3</title>
+  </head>
+  <body>
+    <script>
+      // var VS let **
+      // var: 변수 재선언, 할당, 함수레벨 스코프
+      // 함수: 단독으로 실행, 메소드: 객체 생성, 생성 후 호출
+      function foobar() {
+        var foo = 5;
+        console.log(foo);
+      }
+      foobar(); //함수 호출
+      // console.lod(foo); //Uncaught ReferenceError: foo is not defined => 함수 안에서 선언된 변수 사용
+
+      if (true) {
+        var a = 6;
+        console.log("블럭 내부 ", a);
+      }
+      console.log("블럭 외부 ", a);
+
+      // let: 변수 재선언 불가, 할당, 블록레벨 스코프
+      function foobar1() {
+        var foo1 = 5;
+        console.log(foo1);
+      }
+      // Uncaught ReferenceError: foo1 is not defined
+      // console.log(foo1);
+
+      if (true) {
+        let b = 6;
+        console.log("블럭 내부 ", b);
+      }
+      // Uncaught ReferenceError: b is not defined
+      // console.log("블럭 외부 ", b);
+
+      // 같은 레벨에 있는 것이 아니라 하나는 블럭 안에 있고 이건 블럭 밖에 선언된 것이므로 변수 재선언 개념이 아니다.
+      let b = 7;
+      console.log("새로 선언 ", b);
+    </script>
+  </body>
+</html>

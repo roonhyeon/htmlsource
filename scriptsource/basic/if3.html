@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if3</title>
+  </head>
+  <body>
+    <script>
+      //alert(): 경고창, 메시지
+      //prompt(): 사용자에게 입력받기
+      //confirm(): 확인 / 취소 선택 가능
+
+      //수학, 영어, 국어 점수를 입력받은 후 평균을 구한 뒤 평균에 따라 성적 출력
+      //90이상 a, 80이상 b, 70이상 c, 60이상 d, f
+
+      // let math = Number(prompt("수학 점수를 입력하세요: ", ""));
+      // let eng = Number(prompt("영어 점수를 입력하세요: ", ""));
+      // let kor = Number(prompt("국어 점수를 입력하세요: ", ""));
+      // let avg = (math + eng + kor) / 3;
+      // if (avg >= 90) {
+      //   document.write("A");
+      // } else if (avg >= 80) {
+      //   document.write("B");
+      // } else if (avg >= 70) {
+      //   document.write("C");
+      // } else if (avg >= 60) {
+      //   document.write("D");
+      // } else {
+      //   document.write("F");
+      // }
+
+      //확인 클릭 => 좋습니다. 게임 한 판 하시죠.
+      //취소 => 나중에 한 판 하시죠.
+      if (confirm("게임 한 판 하실래요?")) {
+        document.write("좋습니다. 게임 한 판 하시죠.");
+      } else {
+        document.write("나중에 한 판 하시죠.");
+      }
+    </script>
+  </body>
+</html>

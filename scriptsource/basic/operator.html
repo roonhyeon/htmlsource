@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>operator</title>
+  </head>
+  <body>
+    <script>
+      //연산자
+      //산술, 비교, 연결
+      let a = 4,
+        b = 5;
+
+      console.log("a + b = ", a + b);
+      console.log("a - b = ", a - b);
+      console.log("a * b = ", a * b);
+      console.log("a / b = ", a / b); //자바와는 달리 소수점까지 나누어준다. (0.8)
+      console.log("a % b = ", a % b);
+      console.log("a == b = ", a == b);
+      console.log("a != b = ", a != b);
+
+      //==, !=: 단순 값 비교
+      //===, !==: 값, 타입 비교
+      let c = "4";
+      console.log("a == c = ", a == c);
+      console.log("a === c = ", a === c);
+      console.log("a != c = ", a != c);
+      console.log("a !== c = ", a !== c);
+
+      let d = "3";
+      //+에서 문자열과 붙으면 연결의 의미
+      console.log("c + d = ", c + d); //"4"+"3" = 43
+      console.log("a + d = ", a + d); //4 + "3" = 43
+
+      //4 - "3", 4 * "3", 4 / "3" => 연산이 아주 잘 일어난다.
+      console.log("a - d = ", a - d);
+      console.log("a * d = ", a * d); //자바와는 달리 소수점까지 나누어준다. (0.8)
+      console.log("a / d = ", a / d);
+    </script>
+  </body>
+</html>

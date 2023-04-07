@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if2</title>
+  </head>
+  <body>
+    <script>
+      // 숫자를 입력하라는 창 뜸. 뒤에 쓴 문자는 뭘 입력해야 하는지 알려주는 문구 같은 것
+      // prompt("숫자를 입력해주세요", "숫자");
+      // let number = Number(prompt("숫자를 입력해주세요", "숫자")); //이렇게 prompt 앞에 number를 붙여주면 들어오는 값에 대해 판별(string or number)을 해줄 수 있다.
+      let number = parseInt(prompt("숫자를 입력해주세요", "숫자"));
+      console.log(number);
+      console.log(typeof number); //string 35 => "35"
+
+      //Number() ==> NaN(Not a Number)
+
+      //양수 or 음수 출력
+      if (number < 0) {
+        console.log("음수");
+      } else if (isNaN(number)) {
+        console.log("문자임");
+      } else {
+        console.log("양수");
+      }
+
+      //입력을 받은 후 짝수, 홀수 출력
+      let number1 = Number(prompt("숫자를 입력해주세요", "숫자"));
+      if (number1 % 2 == 0) {
+        // console.log("짝수");
+        document.write("짝수"); //alert 창에 입력된다.
+      } else {
+        // console.log("홀수");
+        document.write("홀수");
+      }
+    </script>
+  </body>
+</html>

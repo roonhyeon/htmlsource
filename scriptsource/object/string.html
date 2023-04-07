@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string</title>
+  </head>
+  <body>
+    <script>
+      // let msg="hello javascript";
+      let msg = new String("hello javascript");
+
+      document.write("특정 위치 문자 반환: " + msg.charAt(4) + "<br>");
+      document.write("특정 문자 위치 찾기: " + msg.indexOf("j") + "<br>");
+      document.write("특정 문자 찾기: " + msg.match("ja") + "<br>"); // 찾은 문자 반환: ja
+      document.write("특정 문자 찾기: " + msg.match("boy") + "<br>"); // 못 찾으면 null 반환
+      document.write("특정 문자 찾기: " + msg.search("ja") + "<br>");
+      document.write("특정 문자 변경: " + msg.replace("hello", "hi") + "<br>");
+      document.write("문자 자르기: " + msg.substring(6, 10) + "<br>");
+      document.write("문자 자르기: " + msg.slice(6, 10) + "<br>");
+      document.write("공백 제거: " + "     hello".trim() + "<br>");
+      document.write("대문자 변경: " + msg.toUpperCase() + "<br>");
+      document.write("소문자 변경: " + "ABCDEFG".toLowerCase() + "<br>");
+
+      // 소문자로 영문 이름 입력받기 => 대문자로 변경 출력
+      // 전화번호 입력 받기(010-1234-4567) => 010-####-4568
+      let name = prompt("소문자로 이름을 입력하세요: ");
+      let tel = prompt("전화번호를 입력하세요(000-0000-0000): ");
+      document.write(name.toUpperCase() + "<br>");
+      document.write(tel.replace(tel.substring(4, 8), "####"));
+      // document.write(tel.slice(0, 3) + "-####-" + tel.slice(9, 13));
+    </script>
+  </body>
+</html>

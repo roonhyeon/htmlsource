@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var2</title>
+  </head>
+  <body>
+    <script>
+      // var VS let **
+      // var: 변수 재선언, 할당, 함수레벨 스코프
+      var value1 = 3; //선언, 할당
+      console.log(value1);
+
+      var value1 = 5; //재선언
+      console.log(value1);
+
+      value1 = 10; //(값) 재할당
+      console.log(value1);
+
+      // let: 변수 재선언 불가, 할당, 블록레벨 스코프
+      let value2 = 6;
+      console.log(value2);
+
+      // let value2=7; => 오류 발생, var에서 선언해 준 변수명(value1)도 재선언 불가
+
+      value2 = 8; //재할당은 가능
+      console.log(value2);
+    </script>
+  </body>
+</html>

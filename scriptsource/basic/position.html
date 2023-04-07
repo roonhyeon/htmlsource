@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+  </head>
+  <body>
+    <button type="button" id="button">클릭</button>
+    <script>
+      // head에 선언했을 때는 오류가 나지만 body 안에 선언하니 오류가 나지 않는다.
+      // 'id가 button인 요소를 가져와 봐'라는 의미
+      var button = document.getElementById("button");
+      button.addEventListener("click", function () {
+        alert("hello");
+      });
+    </script>
+  </body>
+</html>

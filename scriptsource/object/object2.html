@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object2</title>
+  </head>
+  <body>
+    <script>
+      const student = {
+        // 앞에가 key, 뒤에가 value값
+        name: "홍길동",
+        kor: 92,
+        math: 98,
+        eng: 96,
+        sci: 98,
+      };
+
+      let output = "";
+      // for ~ in: 객체 출력 시 사용
+      for (const key in student) {
+        output += "▶ " + key + " : " + student[key] + "<br>";
+      }
+      document.write(output);
+    </script>
+  </body>
+</html>
