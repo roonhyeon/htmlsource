@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window</title>
+  </head>
+  <body>
+    <script>
+      // BOM(Browser Object Model): 브라우저 안의 모든 요소들을 자바스크립트에서 다룰 수 있도록 객체로 되어 있다.
+      let output = "";
+      for (let key in window) {
+        output += key + ": " + window[key] + "\n";
+      }
+      console.log(output);
+
+      // window: 브라우저 최상위 객체
+      // 대표함수: alert(), prompt(), confirm(), moveTo(), resizeTo(), setInterval(), setTimeout()
+      // window.alert() // 정식 호출 방식
+
+      //새창 띄우기
+      // window.open();
+      // window.open("https://www.naver.com");
+      // window.open("../function/function7.html");
+
+      window.open("./child.html", "", "width=420,height=550,left=300,top=50"); // 뒤에 숫자들은 팝업창의 크기와 위치
+    </script>
+  </body>
+</html>

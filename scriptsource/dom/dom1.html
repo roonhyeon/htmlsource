@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom1</title>
+  </head>
+  <body>
+    <h1 id="header1">header1</h1>
+    <h2 id="header2">header2</h2>
+    <form action="">
+      <input type="text" name="username" id="username" value="홍길동" />
+    </form>
+    <script>
+      // DOM: 자바스크립트에서 html 문서에 접근하는 방법
+      // 노드(element 노드, attribute 노드, text 노드)
+      // <h1 class='header'>헤더</h1>
+      // element 노드: h1, attribute 노드: class='header', text 노드: 헤더
+
+      // DOM에 접근하기
+      // 요소 찾기
+      // 1. 아이디로 찾기
+      // header1 찾기
+      const header1 = document.getElementById("header1");
+      console.log(header1);
+
+      // header1이 가지고 있는 텍스트 노드 값에 접근
+      console.log(header1.innerText);
+      console.log(header1.innerHTML);
+      console.log(header1.textContent); // == innerText
+
+      // 텍스트 노드 값을 변경
+      // header1.innerText = "<i>헤더 1</i>";
+      header1.innerHTML = "<i>헤더 1</i>"; // 텍스트 노드에 태그가 포함되는 경우 태그를 태그로 인식시키게 하려면 innerHTML를 사용하면 된다.
+
+      // header2 찾기
+      const header2 = document.getElementById("header2");
+      console.log(header2);
+
+      // 텍스트 노드 값 변경: Header2 with getElementById()
+      header2.innerText = header2.innerText + " with getElementById()";
+
+      let username = document.getElementById("username");
+      console.log(username);
+      // form 요소의 텍스트 값들은 value로 가져온다.
+      console.log(username.value);
+    </script>
+  </body>
+</html>

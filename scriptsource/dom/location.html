@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>location</title>
+  </head>
+  <body>
+    <button type="button">움직이기</button>
+    <script>
+      // location.reload(); // = 새로고침
+      // location.replace("이동 경로"): 이동 경로로 이동
+      const move = function () {
+        //둘 다 새로운 경로로 이동하는 것이지만....
+        // location.replace("https://www.naver.com"); // 이전 페이지로 돌아갈 수 없다. 경로를 새로 시작
+        location.href = "https://www.naver.com"; // 이전 페이지로 돌아갈 수 있다.(뒤로가기 가능) 경로 보존된다.
+      };
+      // move();
+
+      document.querySelector("button").addEventListener("click", move);
+    </script>
+  </body>
+</html>

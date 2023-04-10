@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function2</title>
+  </head>
+  <body>
+    <script>
+      // 1. 함수 선언 방식
+      function multiply(a, b) {
+        return a * b;
+      }
+      // 함수 호출
+      console.log(multiply());
+      console.log(multiply(4, 3));
+
+      // 2-1. 함수 표현식: 익명함수
+      const myFunction = function (a, b) {
+        return a * b;
+      };
+      // 함수 호출
+      console.log(myFunction());
+      console.log(myFunction(5, 6));
+
+      // 2-2. 함수 표현식: 기명함수
+      const myFunction2 = function name(a, b) {
+        return a * b;
+      };
+      // 함수 호출
+      // console.log(name(12, 3)); // name is not a function: name 이름은 function을 벗어난 외부에서 호출할 수 없다.
+      console.log(myFunction2(7, 8));
+
+      // 3. function 안에 중첩으로 function을 선언 가능
+      function a() {
+        function b() {
+          console.log("b");
+        }
+
+        if (true) {
+          function c() {
+            console.log("c");
+          }
+        }
+        // 함수의 중첩이 가능하지만 그것의 호출은 함수 내부에서만 가능하다.
+        b();
+        c();
+      }
+      // 외부에서 호출 가능??
+      a();
+      // b(); // b is not defined
+      // c();
+    </script>
+  </body>
+</html>

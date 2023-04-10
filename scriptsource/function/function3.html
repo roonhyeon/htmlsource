@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function3</title>
+  </head>
+  <body>
+    <script>
+      // 1. 함수 선언 방식: 호출을 먼저하고 => '호이스팅' 가능
+      console.log(multiply(3, 4));
+      // 선언을 나중에 한다.
+      function multiply(a, b) {
+        return a * b;
+      }
+
+      console.log(a); //오류가 나지 않는다: undefined
+      var a = "안녕하세요";
+      console.log(a);
+
+      // 2. 함수 표현식: '호이스팅' 불가
+      console.log(myFunction(5, 6)); // Cannot access 'myFunction' before initialization
+      const myFunction = function (a, b) {
+        return a * b;
+      };
+    </script>
+  </body>
+</html>

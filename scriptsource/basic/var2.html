@@ -9,7 +9,7 @@
   <body>
     <script>
       // var VS let **
-      // var: 변수 재선언, 할당, 함수레벨 스코프
+      // 1. var: 변수 재선언, 할당, 함수레벨 스코프, 호이스팅 가능
       var value1 = 3; //선언, 할당
       console.log(value1);
 
@@ -19,7 +19,12 @@
       value1 = 10; //(값) 재할당
       console.log(value1);
 
-      // let: 변수 재선언 불가, 할당, 블록레벨 스코프
+      console.log(a); //호이스팅 오류가 나지 않는다: undefined
+      var a = "안녕하세요";
+      console.log(a);
+
+      // 2. let: 변수 재선언 불가, 할당, 블록레벨 스코프, 호이스팅 불가
+      // console.log(value2); // Cannot access 'value2' before initialization => 호이스팅 불가
       let value2 = 6;
       console.log(value2);
 

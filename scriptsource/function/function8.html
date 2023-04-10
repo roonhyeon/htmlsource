@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function8</title>
+    <style>
+      /* 전체 margin. padding은 0으로 지정 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* alert-danger: 높이 60, 글자색 #58151c, 테두리: #f1aeb5, 테두리 둥글게 10px, 배경색 #f8d7da, 줄높이 60px, 왼쪽 패딩 30px */
+      .alert-danger {
+        height: 60px;
+        color: #58151c;
+        border: 1px solid #f1aeb5;
+        border-radius: 10px;
+        background-color: #f8d7da;
+        line-height: 60px;
+        padding-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert alert-danger">
+      <span>10 </span>초 이내에 상품 구매시 사은품 증정!!!
+    </div>
+
+    <script>
+      // 인코딩(부호화) VS 디코딩(복호화)
+      // 인코딩: 형태나 형식을 변환
+      // 디코딩: 변환했던 것을 원래대로 돌리는 것
+      // 문자인코딩: 문자나 기호들을 컴퓨터가 이해할 수 있게 형식을 변환(utf-8)
+
+      // 1. 내장함수
+      // 1) encodeURI(): 문자를 유니코드 값으로 인코딩(영문, 숫자, 일부 기호 제외)
+      // 2) encodeURIComponent(): 문자를 유니코드 값으로 인코딩(영문, 숫자만 제외))
+      document.write(
+        encodeURI("http://localhost:8080/basic/info.html?name=홍길동")
+      );
+      document.write("<br>");
+      document.write(
+        encodeURIComponent(
+          "http://localhost:8080/basic/info.html?name=홍길동&age=15"
+        )
+      );
+
+      // 3) eval(): 문자열을 코드로 실행하게 해준다.
+      var evalTest = "";
+      evalTest += "alert(10);";
+      // eval(evalTest);
+
+      // 4) isNaN(): NaN(Not a Number)
+      var num = "abc";
+      if (isNaN(num)) {
+        console.log("숫자가 아님");
+      } else {
+        console.log("숫자");
+      }
+
+      // 5) prompt(), alert(), confirm(), parseInt(), parseFloat()
+
+      // 동기 함수: 차례대로 실행되는 함수(이전 함수가 실행이 안 끝난 경우 다음 함수는 대기 상황)
+      // 6) setTimeout(): 비동기 함수(다른 함수의 실행 여부와 상관없이 따로 동작한다.)
+      console.log("시작");
+      setTimeout(() => {
+        console.log("3초가 지났습니다.");
+      }, 3000); // timeout: 시간 지정(/ms 단위라서 3초를 원하면 3000을 써야 한다.)
+      console.log("마무리"); // '마무리'부터 나오고 '3초가 지났습니다' 멘트 출력됨
+
+      setTimeout(() => {
+        // div를 화면에서 안 보이게
+        document.querySelector(".alert").style.display = "none";
+      }, 10000); // timeout: 시간 지정(/ms 단위라서 3초를 원하면 3000을 써야 한다.)
+
+      // 7) setInterval(): 일정한 간격으로 실행 (비동기 함수)
+      setInterval(() => {
+        console.log("안녕");
+      }, 2000);
+    </script>
+  </body>
+</html>
