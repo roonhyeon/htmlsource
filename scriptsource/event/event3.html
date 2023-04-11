@@ -19,8 +19,8 @@
       // e.target:  실제 이벤트가 일어난 대상
       // e.currentTarget: 이벤트 버블링으로 이벤트가 발생한 모든 요소
 
-      // three 클릭 시 three two, one 출력
-      // two 클릭 시 three two, one 출력
+      // three 클릭 시 three, two, one 출력
+      // two 클릭 시 two, one 출력
       const divs = document.querySelectorAll("div");
       function logEvent(e) {
         console.log("e.currentTarget.className", e.currentTarget.className);
