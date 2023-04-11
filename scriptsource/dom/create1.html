@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create1</title>
+  </head>
+  <body>
+    <!-- 특정 위치에 요소 끼워넣을 때 사용 -->
+    <div>아래 쪽에 생성되는 태그</div>
+    <script>
+      // 요소 생성
+      // window.onload: 화면이 다 보여진 후에 function을 실행해주세요.
+      window.onload = function () {
+        const header = document.createElement("h1");
+        const content = document.createTextNode("Hello DOM");
+        // h1과 textNode 연결해주는 코드
+        // appendChild: 뒤로 붙여줌
+        header.appendChild(content); // <h1>Hello DOM</h1> => h1과 Hello DOM을 연결해주는 과정
+        document.body.appendChild(header); // body 태그 안에 <h1>Hello DOM</h1> 코드를 자식 태그로 넣어주는 과정
+
+        const div = document.createElement("div");
+        const content2 = document.createTextNode("Hi there and greetings!");
+        div.appendChild(content2);
+        // document.body.appendChild(content2);
+
+        // div 태그('아래 쪽에 생성되는 태그') 찾아오기
+        const divdiv = document.querySelector("div");
+        console.log(divdiv);
+
+        // insertBefore: 앞에 붙여줌
+        document.body.insertBefore(div, divdiv);
+      };
+    </script>
+  </body>
+</html>

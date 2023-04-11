@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event2</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <button type="button">클릭1</button>
+    <button type="button">클릭2</button>
+    <script>
+      // 이벤트: 버튼 클릭
+      // 핸들러: 첫번째 버튼이 클릭되면 '안녕하세요' 메시지 출력하기, 두번째 버튼이 클릭되면 '안녕히 가세요' 메시지 출력하기
+
+      // 이벤트 대상(버튼) 요소 찾기
+      const btns = document.querySelectorAll("button");
+      console.log(btns[0]);
+      console.log(btns[1]);
+
+      // 이벤트 리스너와 연결
+      // 버전 1
+      btns[0].onclick = function showDialog() {
+        alert("안녕하세요");
+      };
+
+      // 버전 2
+      // function showDialog2() {
+      //   alert("안녕히 가세요");
+      // }
+      // btns[1].addEventListener("click", showDialog2);
+      btns[1].addEventListener("click", () => alert("안녕히 가세요")); // addEventListener와 함께 쓸 때는 onclick은 사용하지 않는다.
+    </script>
+  </body>
+</html>

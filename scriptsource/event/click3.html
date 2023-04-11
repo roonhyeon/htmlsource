@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click3</title>
+  </head>
+  <body>
+    <div>
+      <input type="radio" name="gender" id="" />남
+      <input type="radio" name="gender" id="" />여
+    </div>
+    <script>
+      // // 이벤트 대상(radio): 라디오버튼 찾아오기
+      // const rdos = document.querySelectorAll("input"); // [type='radio'] 도 가능
+      // console.log(rdos);
+
+      // rdos.forEach((rdo) => {
+      //   // console.log(rdo);
+      //   rdo.addEventListener("click", (e) => {
+      //     // 사용자가 선택한(이벤트 대상) 값을 가져오기
+      //     console.log(e.target);
+      //     console.log(e.target).value;
+      //   });
+      // });
+
+      // 이벤트 버블링
+      const div = document.querySelector("div");
+      div.addEventListener("click", (e) => {
+        console.log(e.target.value);
+      });
+    </script>
+  </body>
+</html>

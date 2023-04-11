@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create2</title>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        let output = "<ul>";
+        output += "<li>JAVASCRIPT</li>";
+        output += "<li>JQUERY</li>";
+        output += "<li>AJAX</li>";
+        output += "<li>DATABASE</li>";
+        output += "</ul>";
+
+        // 태그가 들어간 걸 태그로 인식하는 것은 얘밖에 없기 때문에 innertext로 바꾸면 원하는 출력 결과를 얻을 수 없다.
+        document.body.innerHTML = output;
+      };
+    </script>
+  </body>
+</html>

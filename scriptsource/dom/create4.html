@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create4</title>
+  </head>
+  <body>
+    <header>
+      <h1>Simple HTML</h1>
+    </header>
+    <div id="content">
+      <p>This is a <i>simple</i> HTML file.</p>
+    </div>
+    <div class="callout">
+      <p>This is as fancy as we'll get!</p>
+    </div>
+    <p>
+      IDs (such as <span class="code">#content</span>) are unique (there can
+      only be one per page)
+    </p>
+    <p>
+      classes (such as <span class="code">.callout</span>) can be used on many
+      elements
+    </p>
+    <div id="callout2" class="callout fancy">
+      <p>A single HTML element can have multiple classes.</p>
+    </div>
+    <script>
+      // 2개의 p 태그를 생성한다.
+      // <p>I was created dynamically</p>
+      // <p>I was also created dynamically!!</p>
+      // <p>This is a <i>simple</i> HTML file.</p> 앞에 첫번째 p 태그를 넣고, 뒤에 두번째 p 태그를 넣는다.
+      window.onload = function () {
+        const header1 = document.createElement("p");
+        const p1 = document.createTextNode("I was created dynamically");
+        header1.appendChild(p1);
+        // header1.innerText="I was created dynamically"
+
+        const header2 = document.createElement("p");
+        const p2 = document.createTextNode("I was also created dynamically!!");
+        header2.appendChild(p2);
+        // header2.innerText="I was also created dynamically!!"
+
+        const findp = document.querySelector("#content");
+        const current = document.querySelector("#content > p");
+        findp.insertBefore(header1, current);
+        findp.appendChild(header2);
+      };
+    </script>
+  </body>
+</html>

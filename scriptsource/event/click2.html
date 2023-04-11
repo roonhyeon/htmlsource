@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click2</title>
+  </head>
+  <body>
+    <div>
+      <input type="radio" name="color" id="" />파랑색
+      <input type="radio" name="color" id="" />녹색
+    </div>
+    <script>
+      // 이벤트 대상(radio): 라디오버튼 찾아오기
+      const rdos = document.querySelectorAll("input"); // [type='radio'] 도 가능
+
+      // 방법 1
+      // rdos[0].addEventListener("click", () => {
+      //   // body 색상 lightblue
+      //   document.body.style.background = "lightblue";
+      // });
+      // rdos[1].addEventListener("click", () => {
+      //   // body 색상 green
+      //   document.body.style.background = "green";
+      // });
+
+      // 방법 2
+      function changeColor(color) {
+        document.body.style.background = color;
+      }
+      rdos[0].addEventListener("click", () => changeColor("lightblue"));
+      rdos[1].addEventListener("click", () => changeColor("green"));
+    </script>
+  </body>
+</html>

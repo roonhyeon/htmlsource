@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>change</title>
+  </head>
+  <body>
+    <div>
+      <label for="word1">word1</label>
+      <input type="text" name="word1" id="word1" value="ABCDE" />
+    </div>
+    <div>
+      <label for="word2">word2</label>
+      <input type="text" name="word2" id="word2" value="ABCDE" />
+    </div>
+    <div>
+      <label for="word3">word3</label>
+      <input type="text" name="word3" id="word3" value="ABCDE" />
+    </div>
+    <p>입력 필드를 벗어나면 소문자로 변경됩니다.</p>
+    <select name="fruits" id="">
+      <option value="사과">사과</option>
+      <option value="오렌지">오렌지</option>
+      <option value="딸기">딸기</option>
+      <option value="바나나">바나나</option>
+      <option value="망고">망고</option>
+    </select>
+    <script>
+      // change: 값의 변화가 일어난 후 포커스를 읿어버릴 때 발생한다.
+      // blur: 값의 변화와는 상관없이 포커스를 잃어버리기만 하면 무조건 발생한다.
+      document.querySelector("#word1").addEventListener(
+        "change",
+        (e) => (e.target.value = e.target.value.toLowerCase()) // value는 사용자가 입력한 값, value.toLowerCase()는 그 입력한 값에 대한 처리
+      );
+
+      document.querySelector("#word2").addEventListener("blur", (e) => {
+        console.log(e.target);
+        e.target.value = e.target.value.toLowerCase();
+      });
+
+      document.querySelector("#word3").addEventListener("input", (e) => {
+        console.log("word3", e.target);
+        e.target.value = e.target.value.toLowerCase();
+      }); // 입력을 하기만 하면(input이 되는 바로 그 시점에) 동시에 소문자로 바뀐다.
+
+      // select 가져오기 + 이벤트 change
+      document
+        .querySelector("select")
+        .addEventListener("change", (e) => console.log(e.target.value));
+    </script>
+  </body>
+</html>
