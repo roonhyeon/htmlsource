@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert1</title>
+    <style>
+      .alert-box {
+        background-color: skyblue;
+        padding: 25px;
+        color: white;
+        border-radius: 5px;
+        display: none;
+        position: relative;
+        margin: 0;
+      }
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(54, 62, 228);
+        color: white;
+      }
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      알림창
+      <span class="close"> X </span>
+    </div>
+    <button class="show">알림창 보여주기</button>
+    <script>
+      // // 버튼 클릭 시 '알림창' 보여주기
+      // document.querySelector("button").addEventListener("click", () => {
+      //   document.querySelector(".alert-box").style.display = "block";
+      // });
+
+      // // X 클릭 시 '알림창' 닫기
+      // document.querySelector(".close").addEventListener("click", () => {
+      //   document.querySelector(".alert-box").style.display = "none";
+      // });
+
+      // 위 코드를 하나의 함수로 묶어주기
+      const notification = function (state) {
+        document.querySelector(".alert-box").style.display = state;
+      };
+
+      document
+        .querySelector(".show")
+        .addEventListener("click", () => notification("block"));
+      document
+        .querySelector(".close")
+        .addEventListener("click", () => notification("none"));
+    </script>
+  </body>
+</html>

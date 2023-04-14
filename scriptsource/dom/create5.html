@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create5</title>
+  </head>
+  <body>
+    <div id="test">
+      <p>반갑습니다</p>
+    </div>
+    <script>
+      const p = "<p>안녕하세요</p>";
+      // 자식 태그가 없는 경우
+      // document.getElementById("test").innerHTML = p;
+
+      // // 자식 태그가 있는 경우(억지로 밀어넣기)
+      // document.getElementById("test").innerHTML =
+      //   document.getElementById("test").innerHTML + p;
+
+      const test = document.getElementById("test");
+
+      // insertAdjacentHTML(삽입위치, 삽입할 요소)
+      // 삽입위치
+      // afterbegin: 지정한 요소의 첫번째 자식으로 들어간다. => div 안에서 가장 먼저 출력된다.
+      // afterend: 지정한 요소의 다음 형제 요소로 삽입된다. => div 다음에 들어갔다.
+      // beforebegin: 지정한 요소의 이전 형제 요소로 삽입된다. => div 앞에 들어갔다.
+      // beforeend: 지정한 요소의 마지막 자식으로 들어간다. => div 안에서 가장 나중에 출력된다.
+      test.insertAdjacentHTML("beforeend", p);
+    </script>
+  </body>
+</html>

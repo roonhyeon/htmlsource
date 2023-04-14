@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert2</title>
+    <style>
+      .alert-box {
+        background-color: skyblue;
+        padding: 25px;
+        color: white;
+        border-radius: 5px;
+        display: none;
+        position: relative;
+        margin: 0;
+      }
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(54, 62, 228);
+        color: white;
+      }
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      <span class="close"> X </span>
+    </div>
+    <button class="id">아이디</button>
+    <button class="pwd">비밀번호</button>
+    <script>
+      const alertBox = document.querySelector(".alert-box");
+      const notification = function (state, msg) {
+        // msg 값이 안 들어오는 경우 => undefined
+        // console.log(msg);
+        alertBox.style.display = state;
+        if (msg != undefined) {
+          // alertBox.innerHTML = msg + alertBox.innerHTML; // 기존 문구가 계속 남아있게 된다.
+          // alertBox.insertAdjacentHTML("afterbegin", msg); // 기존 문구가 계속 남아있게 된다.
+          console.log(alertBox.firstChild);
+          console.log(alertBox.firstChild.nodeValue);
+          alertBox.firstChild.nodeValue = msg;
+        }
+      };
+
+      // 아이디를 클릭하면 '아이디를 입력해주세요' 메시지 alert 보여주기
+      document
+        .querySelector(".id")
+        .addEventListener("click", () =>
+          notification("block", "아이디를 입력해주세요.")
+        );
+      // 비밀번호를 클릭하면 '비밀번호를 입력해주세요' 메시지 alert 보여주기
+      document
+        .querySelector(".pwd")
+        .addEventListener("click", () =>
+          notification("block", "비밀번호를 입력해주세요.")
+        );
+
+      document
+        .querySelector(".close")
+        .addEventListener("click", () => notification("none"));
+    </script>
+  </body>
+</html>

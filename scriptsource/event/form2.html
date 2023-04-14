@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form2</title>
+  </head>
+  <body>
+    <h3>덧셈 계산기</h3>
+    <form action="">
+      <div>
+        <label>
+          num1
+          <input type="text" name="num1" id="num1" />
+        </label>
+      </div>
+      <div>
+        <label>
+          num2
+          <input type="text" name="num2" id="num2" />
+        </label>
+      </div>
+      <div>
+        <button type="button">더하기</button>
+      </div>
+    </form>
+    <div>결과 <input type="text" name="result" id="result" readonly /></div>
+    <script>
+      // form 안의 모든 요소는 무조건 text이다. => 숫자로 바꿔줘야 함 by parseInt
+      // 더하기를 클릭하면 숫자 가져와서 더하기 한 후 결과 result 안에 보여주기
+      document
+        .querySelector("[type='button']")
+        .addEventListener("click", () => {
+          const num1 = parseInt(document.querySelector("#num1").value);
+          const num2 = parseInt(document.querySelector("#num2").value);
+          const result = document.querySelector("#result");
+          result.value = num1 + num2;
+        });
+    </script>
+  </body>
+</html>

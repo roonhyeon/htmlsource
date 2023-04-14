@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform2</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 300px;
+        height: 150px;
+        border: 2px solid black;
+        overflow: hidden;
+      }
+      .wrap {
+        width: 1500px;
+        /* 0에서 시작 */
+        transform: translate(0);
+        transition: all 0.5s;
+      }
+      .box {
+        width: 300px;
+        height: 150px;
+        float: left;
+      }
+      .box1 {
+        background: rgb(250, 250, 175);
+        transform: translate(0);
+        transition: all 1s;
+      }
+      .box2 {
+        background: lightpink;
+      }
+      .box3 {
+        background: rgba(151, 206, 204, 0.88);
+      }
+      .box4 {
+        background: rgba(211, 211, 211, 0.845);
+      }
+      .box5 {
+        background: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <div class="box box1">Box1</div>
+        <div class="box box2">Box2</div>
+        <div class="box box3">Box3</div>
+        <div class="box box4">Box4</div>
+        <div class="box box5">Box5</div>
+      </div>
+    </div>
+    <div class="btn-area">
+      <button type="button" class="prev">이전</button>
+      <button type="button" class="next">다음</button>
+    </div>
+
+    <script>
+      // 캐러셀 움직일 때: -size * 인덱스
+      const wrap = document.querySelector(".wrap");
+      let index = 0;
+      // 이전 버튼 클릭 시 박스 위치를 이동
+      document.querySelector(".prev").addEventListener("click", (e) => {
+        if (index == 0) return;
+        index -= 1;
+        wrap.style.transform = `translate(-${300 * index}px)`;
+      });
+
+      // 다음 버튼 클릭 시 확대시키기
+      document.querySelector(".next").addEventListener("click", (e) => {
+        if (index == 4) return;
+        index += 1;
+        wrap.style.transform = `translate(-${300 * index}px)`; // X는 가로로 확대, Y는 세로로 확대, 안주면 X/Y 모두
+      });
+    </script>
+  </body>
+</html>

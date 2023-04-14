@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>binding1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">상품명 / 가격</div>
+      <div class="name"></div>
+      <div class="price"></div>
+    </div>
+    <script>
+      // 상품 상세 페이지
+      // 배열: ["소나타",50000,"white"]
+      // object: {name:"소나타", price:50000, color:"white"}
+
+      // 자바스크립트 배열 안의 내용을 원하는 화면 위치에 출력시켜 주는 것을 binding이라고 한다.
+      const car = ["소나타", 50000, "white"];
+      document.querySelector(".name").innerText = car[0];
+      document.querySelector(".price").innerText = car[1];
+
+      const car2 = { name: "소나타", price: 50000, color: "white" };
+      document.querySelector(".name").innerText = car2["name"];
+      document.querySelector(".price").innerText = car2.price;
+
+      const car3 = {
+        name: "그랜저",
+        price: [60000, 7000, 8000],
+        color: "white",
+      };
+      document.querySelector(".name").innerText = car3["name"];
+      document.querySelector(".price").innerText = car3.price[1];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regex3</title>
+    <style>
+      span {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="name">이름</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="이름"
+          maxlength="4"
+        />
+      </div>
+      <div>
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" placeholder="email" />
+      </div>
+      <div>
+        <label for="tel">전화번호</label>
+        <input
+          type="text"
+          name="tel"
+          id="tel"
+          placeholder="-를 제외한 숫자를 입력해주세요."
+        />
+        <span id="result"></span>
+      </div>
+      <div>
+        <button type="button">확인</button>
+      </div>
+    </form>
+    <script>
+      // abc123@naver.com
+      const email = /\S+@\S+\.\S+/;
+      // 값이 비어 있거나 패턴에 맞는지 확인
+      document.getElementById("email").addEventListener("change", (e) => {
+        if (e.target.value == "" || !email.test(e.target.value)) {
+          alert("이메일을 확인해주세요.");
+          e.target.select();
+        }
+      });
+
+      // [(ㄱ - ㅎ) | (ㅏ - ㅣ) | (가 - 힣)]; // 자음, 모음 구분해서
+      // 이름에 한글이 입력되었는지 확인
+      const regex = /^[가-힣]{2,4}$/; // 한글용
+      document.getElementById("name").addEventListener("change", (e) => {
+        const name = e.target.value;
+        if (!regex.test(name)) {
+          alert("이름을 확인해주세요.");
+          // e.target.focus();
+          e.target.select();
+        }
+      });
+
+      const re = /^\d{3}\d{4}\d{4}$/;
+      // <방법 1>
+      // 확인 버튼을 클릭하면 사용자가 입력한 전화번호를 가지고 오기
+      document.querySelector("button").addEventListener("click", () => {
+        const tel = document.getElementById("tel").value;
+        // 전화번호와 규칙이 일치하는지 확인한 후 메시지 보여주기
+        if (!re.test(tel)) {
+          document.querySelector("#result").innerHTML =
+            "-를 제외한 숫자를 입력해주세요.";
+        }
+      });
+
+      // <방법 2>
+      // 전화번호 입력이 끝나자마자(확인 버튼 누르지 않아도) 정규식 패턴 확인
+      document.getElementById("tel").addEventListener("change", (e) => {
+        const tel = e.target.value;
+        // 전화번호와 규칙이 일치하는지 확인한 후 메시지 보여주기
+        if (!re.test(tel)) {
+          document.querySelector("#result").innerHTML =
+            "-를 제외한 숫자를 입력해주세요.";
+        } else {
+          document.querySelector("#result").innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>

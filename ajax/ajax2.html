@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        background-color: lightblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+      .container li {
+        margin: 0 10px;
+        width: 25%;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+      <li>메뉴4</li>
+    </ul>
+    <div></div>
+    <script>
+      // ajax(Asynchronous Javascript and XML): 비동기식
+      // 동기식: 서버와 통신할 때 전체 페이지를 깜박이고 로딩(refresh)해주는 방식 => 클라이언트가 서버에 데이터를 요청을 하고 답을 기다리면 된다.
+      // 비동기식: 서버와 통신하기 위해 데이터만 주고 받는 방식 => 전체 페이지의 일부 데이터만 로딩할 때 사용한다.
+
+      // ajax 구현 방법
+      // 1. 자바스크립트의 XMLHttpRequest 객체 사용: 어렵고, 코드의 양이 많다.
+      // 2. fetch api 사용
+      // 3. axios 사용(node.js)
+
+      // fetch("데이터를 가져올 서버 주소")
+      //   .then((response) => response.json()) // 가져온 데이터를 원하는 형태로 변경(파싱)
+      //   .then((data) => console.log(data)); // 파싱된 데이터를 출력
+
+      // 메뉴 2을 클릭하면 hello.txt을 가져와서 화면에 보여주기(refresh 없이)
+      const li = document.querySelector(".container li:nth-child(2)");
+      li.addEventListener("click", () => {
+        fetch("https://roonhyeon.github.io/data/hello.txt")
+          .then((response) => response.text())
+          .then((data) => (document.querySelector("div").innerHTML = data));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form4</title>
+    <style>
+      div * {
+        padding: 10px;
+        margin: 10px;
+      }
+      [readonly] {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.
+      <br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+    <div>
+      <label for="num1">숫자(입력)</label>
+      <input type="text" name="num1" id="num1" size="5" />
+      <button type="button">정답 확인</button>
+    </div>
+    <div>
+      <label for="count">추측 횟수</label>
+      <input type="text" name="count" id="count" size="5" readonly />
+    </div>
+    <div>
+      <label for="hint">힌트</label>
+      <input type="text" name="hint" id="hint" size="30" readonly />
+    </div>
+    <script>
+      // 임의의 숫자 생성(1~100)
+      const num = Math.floor(Math.random() * 100) + 1;
+      // 추측 횟수 변수
+      let nGuess = 0;
+      // 정답 확인 클릭 시 사용자 입력 값 가져오기
+      const btn = document.querySelector("[type='button']");
+      btn.addEventListener("click", () => {
+        let inputNum = parseInt(document.querySelector("#num1").value);
+        // 추측횟수 +1 화면에 보여주기
+        nGuess++;
+        document.querySelector("#count").value = nGuess;
+        // 입력값과 컴퓨터 생성 값을 비교한 후 => '정확합니다.','추측 값이 작습니다.','추측 값이 큽니다.'를 힌트에 보여주기
+        let result = "";
+        if (inputNum < num) {
+          result = "추측 값이 작습니다.";
+        } else if (inputNum > num) {
+          result = "추측 값이 큽니다.";
+        } else if (inputNum == num) {
+          result = "정확합니다.";
+          // 정답을 구했으면 더 이상 버튼은 못 누르게 하기
+          btn.disabled = "true";
+        }
+        document.querySelector("#hint").value = result;
+      });
+    </script>
+  </body>
+</html>

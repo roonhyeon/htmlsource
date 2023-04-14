@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform3</title>
+    <style>
+      * {
+        box-sizing: border-box; /* 요소 크기 산정 콘텐츠 + padding + border */
+      }
+      .carousel-wrapper {
+        width: 500px;
+        height: 480px;
+        overflow: hidden;
+      }
+      .carousel-wrapper > .carousel {
+        display: flex;
+        transform: translate(0);
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <img src="../image/animals1.jpg" alt="" />
+        <img src="../image/animals2.jpg" alt="" />
+        <img src="../image/animals3.jpg" alt="" />
+      </div>
+    </div>
+    <button type="button" class="prev">이전</button>
+    <button type="button" class="next">다음</button>
+    <script>
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+      const carousel = document.querySelector(".carousel");
+
+      let index = 0;
+      prev.addEventListener("click", () => {
+        if (index == 0) return;
+        index -= 1;
+        carousel.style.transform = `translate(-${500 * index}px)`;
+      });
+      next.addEventListener("click", () => {
+        if (index == 2) return;
+        index += 1;
+        carousel.style.transform = `translate(-${500 * index}px)`;
+      });
+    </script>
+  </body>
+</html>

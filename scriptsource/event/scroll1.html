@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroll1</title>
+    <style>
+      body {
+        height: 4000px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("scroll", () => {
+        // 수직 스크롤바 위치를 px 단위로 알려준다.
+        // console.log(window.scrollY);
+
+        // 세로 스크롤이 이미 200px 만큼 강제로 내려와있다.
+        window.scrollTo(0, 200);
+
+        // 현재 위치(200) + 150만큼 이동하여 = 350px에 위치
+        window.scrollBy(0, 150);
+
+        // 350px에서 무한 스크롤
+        console.log(window.scrollY);
+      });
+    </script>
+  </body>
+</html>
