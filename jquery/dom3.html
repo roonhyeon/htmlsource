@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom3</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" name="username" id="username" />
+      <button class="confirm" type="button">클릭</button>
+      <button class="confirm" type="submit">확인</button>
+      <button class="confirm" type="reset">취소</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      const btns = $(".confirm");
+      console.log(btns);
+
+      // HTMLCollection일 때는 forEach가 불가능하므로 그냥 일반 for문으로 돌려주면 된다.
+      for (let i = 0; i < btns.length; i++) {
+        console.log(btns[i]);
+      }
+
+      const btns1 = $(".confirm"); // => NodeList로 전체 요소를 찾아온다.
+      console.log(btns1);
+
+      $.each(btns1, function (idx, item) {
+        console.log(item);
+        // 위, 아래 두 개는 같은 의미
+        console.log($(this));
+        console.log($(this).text());
+      });
+    </script>
+  </body>
+</html>

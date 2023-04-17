@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click2</title>
+  </head>
+  <body>
+    <div>
+      <input type="radio" name="color" id="" value="파랑색" />파랑색
+      <input type="radio" name="color" id="" value="녹색" />녹색
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      // 이벤트 대상(radio): 라디오버튼 찾아오기
+      const rdos = $("input"); // [type='radio'] 도 가능
+
+      console.log(rdos);
+
+      function changeColor(color) {
+        $("body").css("background", color);
+      }
+
+      rdos.on("click", function () {
+        if ($(this).val() === "파랑색") changeColor("lightblue");
+        else changeColor("green");
+      });
+    </script>
+  </body>
+</html>

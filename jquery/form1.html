@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form1</title>
+  </head>
+  <body>
+    <form action="form4.html" method="get">
+      <div>
+        <label for="username">이름</label>
+        <input type="text" name="username" id="username" size="5" />
+      </div>
+      <div>
+        <label for="age">나이</label>
+        <input type="text" name="age" id="age" size="5" />
+      </div>
+      <button type="button" id="list">리스트</button>
+      <button type="button" id="update">수정</button>
+      <button type="button" id="remove">삭제</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      // 각각의 버튼 클릭 시 form의 action을 다르게 지정
+      const form = $("form");
+
+      $("#list").on("click", function () {
+        form.attr("action", "click1.html");
+        // form 안의 age 요소는 삭제 후 전송하고 싶다. => age를 입력했어도 주소줄에 age는 보이지 않는다.
+        $("#age").remove();
+        form.submit();
+      });
+      $("#update").on("click", function () {
+        form.attr("action", "click2.html");
+        // 새로운 요소를 추가한 후 전송하고 싶다. => 따로 입력하지 않았음에도 no=3이 주소창에 추가되었다.
+        form.append("<input type='hidden' name='no' value='3'>");
+        form.submit();
+      });
+      $("#remove").on("click", function () {
+        form.attr("action", "remove1.html");
+      });
+    </script>
+  </body>
+</html>

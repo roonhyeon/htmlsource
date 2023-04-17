@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom1</title>
+  </head>
+  <body>
+    <h1 id="header1">header1</h1>
+    <h2 id="header2">header2</h2>
+    <form action="">
+      <input type="text" name="username" id="username" value="홍길동" />
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      const header1 = $("#header1");
+      console.log(header1);
+
+      console.log(header1.text());
+      console.log(header1.html());
+
+      // 텍스트 노드 값을 변경
+      // header1.text("<i>헤더 1</i>");
+      header1.html("<i>헤더 1</i>"); // 텍스트 노드에 태그가 포함되는 경우 태그를 태그로 인식시키게 하려면 innerHTML를 사용하면 된다.
+
+      // header2 찾기
+      const header2 = $("#header2");
+      console.log(header2);
+
+      // 텍스트 노드 값 변경: Header2 with getElementById()
+      header2.text(header2.text() + " with getElementById()");
+
+      let username = $("#username");
+      console.log(username);
+      // form 요소의 텍스트 값을 value로 가져온다.
+      console.log(username.val());
+    </script>
+  </body>
+</html>
