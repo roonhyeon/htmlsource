@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 동기: 3초가 지났습니다. => 종료
+      // 비동기: 종료 => 3초가 지났습니다.
+      // 콜백함수: 나중에 호출되는 함수
+      setTimeout(() => {
+        console.log("3초가 지났습니다.");
+      }, 3000);
+      console.log("종료");
+
+      let foo = function () {
+        return function () {
+          console.log("이 함수는 리턴값으로 사용되는 함수");
+        };
+      };
+
+      const var1 = foo();
+      var1();
+
+      // 함수를 매개변수로 전달
+      function test() {
+        console.log("이 함수는 전달 인자로 사용되는 함수");
+      }
+      const func1 = function (arg) {
+        arg();
+      };
+
+      func1(test);
+    </script>
+  </body>
+</html>
